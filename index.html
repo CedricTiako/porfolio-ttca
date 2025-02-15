@@ -57,6 +57,106 @@
             transform: translateY(-5px);
         }
     </style>
+    <style>
+        .experience-card {
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    
+        .tech-badge {
+            transition: all 0.2s ease;
+        }
+    
+        .tech-badge:hover {
+            transform: scale(1.1);
+        }
+    
+        .project-preview {
+            transition: all 0.3s ease;
+        }
+    
+        .project-preview:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+    
+        .task-list li {
+            transition: all 0.2s ease;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+        }
+    
+        .task-list li:hover {
+            background-color: rgba(var(--primary-rgb), 0.1);
+            padding-left: 1rem;
+        }
+    
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+    
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+    
+        .section-title:hover::after {
+            width: 100%;
+        }
+    
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        .animate-slide-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+    
+        .divider-gradient {
+            background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
+            height: 2px;
+            opacity: 0.5;
+        }
+    
+        .skill-tag {
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+    
+        .skill-tag:hover::before {
+            left: 100%;
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-base-300">
 
@@ -161,7 +261,8 @@
                     </h1>
                     
                     <p class="text-lg text-base-content/80 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
-                        Développeur Full Stack & Administrateur Système avec près de 4 ans d’expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.                    </p>
+                        Développeur Full Stack & Administrateur Système avec près de 4 ans d’expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
+                    </p>
                 </div>
 
                 <div class="flex flex-wrap gap-4 animate__animated animate__fadeInUp animate__delay-2s">
@@ -387,238 +488,571 @@
 <!-- Experience Section -->
 <section id="experience" class="py-16 bg-base-200">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Expérience Professionnelle</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">EXPÉRIENCE DE TRAVAIL</h2>
         
-        <div class="timeline space-y-12">
-            <!-- Zen Africa -->
-            <div class="card bg-base-100 shadow-xl project-card hover:shadow-2xl transition-all duration-300">
-                <div class="card-body">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
-                        <div>
-                            <h3 class="card-title text-2xl mb-2">Responsable Système & Développeur Full Stack</h3>
-                            <p class="text-primary flex items-center gap-2">
-                                <i class="fas fa-building"></i>Zen Africa SAS
-                                <span class="badge badge-secondary">Temps plein</span>
-                            </p>
-                            <p class="text-sm flex items-center gap-2 mt-1">
-                                <i class="fas fa-calendar"></i>Janvier 2023 - Présent (2 ans 2 mois)
-                            </p>
-                            <p class="text-sm flex items-center gap-2 mt-1">
-                                <i class="fas fa-map-marker-alt"></i>Douala I, Région du Littoral, Cameroun
-                                <span class="badge badge-outline">Sur site</span>
-                            </p>
-                        </div>
-                    </div>
+        <div class="space-y-8">
+            <!-- Timeline dots -->
+            <div class="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20">
+                <div class="sticky top-1/2 w-4 h-4 rounded-full bg-primary transform -translate-x-1/2"></div>
+            </div>
 
-                    <div class="divider"></div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Description du poste</h4>
-                            <p class="text-base-content/80 leading-relaxed">
-                                En tant que développeur d'applications Web et mobiles, je conçois, développe et maintiens des applications Web et mobiles. Je suis passionné par la création d'applications fonctionnelles et attrayantes en utilisant des langages de programmation, des frameworks et d'autres outils.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Responsabilités principales</h4>
-                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
-                                <li>Conception d'applications Web et mobiles</li>
-                                <li>Développement d'applications avec HTML, CSS, JavaScript et PHP</li>
-                                <li>Tests et assurance qualité des applications</li>
-                                <li>Maintenance des applications existantes</li>
-                                <li>Collaboration avec les clients pour comprendre leurs besoins</li>
-                                <li>Gestion de projets de développement</li>
-                                <li>Gestion et administration de 12 serveurs (disponibilité 99%)</li>
-                                <li>Optimisation des bases de données MySQL et PostgreSQL</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Compétences techniques utilisées</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="badge badge-primary">HTML/CSS</span>
-                                <span class="badge badge-primary">JavaScript</span>
-                                <span class="badge badge-primary">PHP</span>
-                                <span class="badge badge-secondary">Flutter</span>
-                                <span class="badge badge-secondary">Ionic</span>
-                                <span class="badge badge-secondary">Angular</span>
-                                <span class="badge badge-secondary">Vue</span>
-                                <span class="badge badge-accent">Laravel</span>
-                                <span class="badge badge-accent">Symfony</span>
-                                <span class="badge badge-info">MySQL</span>
-                                <span class="badge badge-info">PostgreSQL</span>
-                                <span class="badge badge-info">MongoDB</span>
-                                <span class="badge badge-success">Scrum</span>
-                                <span class="badge badge-success">Kanban</span>
-                                <span class="badge badge-warning">OWASP</span>
-                                <span class="badge badge-warning">PCI DSS</span>
+            <!-- Experience Cards -->
+            <div class="grid gap-8">
+                <!-- Zen Africa -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">
+                                    Responsable Système & Développeur Full Stack
+                                </h3>
+                                <p class="text-primary flex items-center gap-2">
+                                    <i class="fas fa-building group-hover:rotate-12 transition-transform"></i>
+                                    Zen Africa
+                                    <span class="badge badge-secondary badge-outline">Temps plein</span>
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    Octobre 2023 - Présent
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Douala, Cameroun
+                                </p>
                             </div>
                         </div>
 
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Projets notables</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div class="card bg-base-200">
-                                    <div class="card-body p-4">
-                                        <h5 class="card-title text-sm">Ballon d'Or Cameroun (MTN)</h5>
-                                        <p class="text-xs">Plateforme de vote des meilleurs joueurs de football</p>
-                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
-                                    </div>
-                                </div>
-                                <div class="card bg-base-200">
-                                    <div class="card-body p-4">
-                                        <h5 class="card-title text-sm">Eneo EasyLight</h5>
-                                        <p class="text-xs">Gestion des services électriques</p>
-                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
-                                    </div>
-                                </div>
-                                <div class="card bg-base-200">
-                                    <div class="card-body p-4">
-                                        <h5 class="card-title text-sm">MTN Roaming & MS365</h5>
-                                        <p class="text-xs">Portails d'abonnement et services télécoms</p>
-                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
-                                    </div>
-                                </div>
+                        <div class="divider divider-gradient">Responsabilités</div>
+
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <p class="text-base-content/80 leading-relaxed">
+                                    En tant que développeur d'applications Web et mobiles, je conçois, développe et maintiens des applications Web et mobiles. Je suis passionné par la création d'applications fonctionnelles et attrayantes en utilisant des langages de programmation, des frameworks et d'autres outils.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Speedy Print -->
-            <div class="card bg-base-100 shadow-xl project-card">
-                <div class="card-body">
-                    <h3 class="card-title text-2xl">Formateur & Enseignant en Programmation</h3>
-                    <p class="text-primary">Centre de Formation Professionnel Speedy Print | Décembre 2023 – Septembre 2024</p>
-                    <ul class="mt-4 space-y-2 list-disc list-inside">
-                        <li>Formation en programmation (C/C++, PHP)</li>
-                        <li>Enseignement des notions d'algorithmique</li>
-                        <li>Enseignement des bases de données SQL</li>
-                        <li>Conception de supports pédagogiques interactifs</li>
-                    </ul>
-                </div>
-            </div>
+                            <div class="animate-slide-in" style="animation-delay: 100ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    Tâches réalisées
+                                </h4>
+                                <ul class="space-y-2 task-list">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Développement d'applications web et mobiles
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Administration et maintenance des serveurs
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Gestion des bases de données
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Mise en place de solutions de sécurité
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Formation et support aux utilisateurs
+                                    </li>
+                                </ul>
+                            </div>
 
-            <!-- FORAMA CAMEROUN -->
-            <div class="card bg-base-100 shadow-xl project-card hover:shadow-2xl transition-all duration-300">
-                <div class="card-body">
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
-                        <div>
-                            <h3 class="card-title text-2xl mb-2">Développeur Web et Mobile</h3>
-                            <p class="text-primary flex items-center gap-2">
-                                <i class="fas fa-building"></i>FORAMA CAMEROUN SARL
-                                <span class="badge badge-secondary">Temps plein</span>
-                            </p>
-                            <p class="text-sm flex items-center gap-2 mt-1">
-                                <i class="fas fa-calendar"></i>Mai 2022 - Janvier 2023
-                            </p>
-                            <p class="text-sm flex items-center gap-2 mt-1">
-                                <i class="fas fa-map-marker-alt"></i>Douala, Cameroun
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="divider">Projet PomPay</div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <p class="mb-4 text-base-content/80">
-                                Pour les particuliers, PomPay est une application en partie gratuite qui facilite les dépôts et les transferts d'argent entre utilisateurs.
-                            </p>
-                            <h4 class="font-semibold text-lg mb-3">Applications développées</h4>
-                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
-                                <li>PomPay</li>
-                                <li>PomPay Agent</li>
-                                <li>PomPay Store</li>
-                                <li>PomPay Delivery</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Tâches réalisées</h4>
-                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
-                                <li>Conception des interfaces avec Flutter / Dart</li>
-                                <li>Revue de code du côté Back-End</li>
-                                <li>Fragmentation de l'application suivant l'architecture de Micro-App</li>
-                                <li>Intégration Front-End avec l'API REST</li>
-                                <li>Réalisation des tests unitaires et tests d'intégrations</li>
-                                <li>Déploiement de l'application sur le PlayStore et AppStore</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4 class="font-semibold text-lg mb-3">Environnement technique</h4>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <!-- Langages & Frameworks -->
-                                <div class="space-y-2">
-                                    <h5 class="font-medium flex items-center gap-2">
-                                        <i class="fas fa-code text-primary"></i>
-                                        Langages & Frameworks
-                                    </h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="badge badge-primary">Flutter</span>
-                                        <span class="badge badge-primary">Dart</span>
-                                        <span class="badge badge-primary">Laravel</span>
-                                        <span class="badge badge-primary">Swift</span>
-                                        <span class="badge badge-primary">Java</span>
+                            <div class="animate-slide-in" style="animation-delay: 200ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-laptop-code text-primary"></i>
+                                    Environnement technique
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-code text-primary"></i>
+                                            Langages & Frameworks
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-primary">PHP</span>
+                                            <span class="badge badge-primary">Angular</span>
+                                            <span class="badge badge-primary">Node.js</span>
+                                            <span class="badge badge-primary">Flutter</span>
+                                            <span class="badge badge-primary">Dart</span>
+                                            <span class="badge badge-primary">Laravel</span>
+                                            <span class="badge badge-primary">Swift</span>
+                                            <span class="badge badge-primary">JavaScript</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- Outils & Plateformes -->
-                                <div class="space-y-2">
-                                    <h5 class="font-medium flex items-center gap-2">
-                                        <i class="fas fa-tools text-secondary"></i>
-                                        Outils & Plateformes
-                                    </h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="badge badge-secondary">Firebase</span>
-                                        <span class="badge badge-secondary">Trello</span>
-                                        <span class="badge badge-secondary">Heroku</span>
-                                        <span class="badge badge-secondary">GitHub</span>
-                                        <span class="badge badge-secondary">PowerAMC</span>
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-tools text-secondary"></i>
+                                            Outils & Plateformes
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-secondary">Firebase</span>
+                                            <span class="badge badge-secondary">Trello</span>
+                                            <span class="badge badge-secondary">Heroku</span>
+                                            <span class="badge badge-secondary">GitHub</span>
+                                            <span class="badge badge-secondary">PowerAMC</span>
+                                            <span class="badge badge-secondary">VS Code</span>
+                                            <span class="badge badge-secondary">Android Studio</span>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- IDE & Méthodologies -->
-                                <div class="space-y-2">
-                                    <h5 class="font-medium flex items-center gap-2">
-                                        <i class="fas fa-laptop-code text-accent"></i>
-                                        IDE & Méthodologies
-                                    </h5>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="badge badge-accent">VS Code</span>
-                                        <span class="badge badge-accent">Android Studio</span>
-                                        <span class="badge badge-accent">Scrum</span>
-                                        <span class="badge badge-accent">UML</span>
-                                        <span class="badge badge-accent">Merise</span>
-                                        <span class="badge badge-accent">MVC</span>
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-sitemap text-accent"></i>
+                                            Méthodologies
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-accent">Scrum</span>
+                                            <span class="badge badge-accent">UML</span>
+                                            <span class="badge badge-accent">Merise</span>
+                                            <span class="badge badge-accent">MVC</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Autres expériences -->
-            <div class="card bg-base-100 shadow-xl project-card">
-                <div class="card-body">
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-xl font-semibold">Consultant Développeur & Formateur C# .NET</h3>
-                            <p class="text-primary">Sanau Groupe - ABIC | 2021-2022</p>
-                            <a href="#" class="btn btn-sm btn-outline mt-2">CRM+ : Plateforme de fidélisation client</a>
+                <!-- Speedy Print -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">
+                                    Formateur & Enseignant en Programmation
+                                </h3>
+                                <p class="text-primary flex items-center gap-2">
+                                    <i class="fas fa-building group-hover:rotate-12 transition-transform"></i>
+                                    Centre de Formation Professionnel Speedy Print
+                                    <span class="badge badge-secondary badge-outline">Temps plein</span>
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    Décembre 2023 – Septembre 2024
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Douala, Cameroun
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Junior Dev Stagiaire</h3>
-                            <p class="text-primary">Weeb Studio Cameroun | 2021</p>
-                            <a href="#" class="btn btn-sm btn-outline mt-2">Bigoodee : Application e-service de coiffure</a>
+
+                        <div class="divider divider-gradient">Responsabilités</div>
+
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <p class="text-base-content/80 leading-relaxed">
+                                    Formation et accompagnement des étudiants dans leur apprentissage de la programmation et du développement informatique.
+                                </p>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 100ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    Tâches réalisées
+                                </h4>
+                                <ul class="space-y-2 task-list">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Formation en programmation (C/C++, PHP)
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Enseignement des notions d'algorithmique
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Enseignement des bases de données SQL
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Conception de supports pédagogiques interactifs
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Suivi et évaluation des étudiants
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 200ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-laptop-code text-primary"></i>
+                                    Environnement technique
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-code text-primary"></i>
+                                            Langages
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-primary">C/C++</span>
+                                            <span class="badge badge-primary">PHP</span>
+                                            <span class="badge badge-primary">SQL</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-tools text-secondary"></i>
+                                            Outils
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-secondary">VS Code</span>
+                                            <span class="badge badge-secondary">Git</span>
+                                            <span class="badge badge-secondary">MySQL</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-laptop-code text-accent"></i>
+                                            Pédagogie
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-accent">Projets pratiques</span>
+                                            <span class="badge badge-accent">Évaluations</span>
+                                            <span class="badge badge-accent">Tutorat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-semibold">Formateur C# .NET</h3>
-                            <p class="text-primary">Classgap.com | 2021 – Présent</p>
-                            <p>Formation de plus de 45 étudiants</p>
+                    </div>
+                </div>
+
+                <!-- FORAMA CAMEROUN -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">
+                                    Développeur Web et Mobile
+                                </h3>
+                                <p class="text-primary flex items-center gap-2">
+                                    <i class="fas fa-building group-hover:rotate-12 transition-transform"></i>
+                                    FORAMA CAMEROUN SARL
+                                    <span class="badge badge-secondary badge-outline">Temps plein</span>
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    Mai 2022 - Janvier 2023
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Douala, Cameroun
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="divider divider-gradient">Projet PomPay</div>
+
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du projet
+                                </h4>
+                                <p class="mb-4 text-base-content/80">
+                                    Pour les particuliers, PomPay est une application en partie gratuite qui facilite les dépôts et les transferts d'argent entre utilisateurs.
+                                </p>
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-mobile-alt text-primary"></i>
+                                    Applications développées
+                                </h4>
+                                <ul class="space-y-2 list-disc list-inside text-base-content/80">
+                                    <li>PomPay</li>
+                                    <li>PomPay Agent</li>
+                                    <li>PomPay Store</li>
+                                    <li>PomPay Delivery</li>
+                                </ul>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 100ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    Tâches réalisées
+                                </h4>
+                                <ul class="space-y-2 task-list">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Conception des interfaces avec Flutter / Dart
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Revue de code du côté Back-End
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Fragmentation de l'application suivant l'architecture de Micro-App
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Intégration Front-End avec l'API REST
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Réalisation des tests unitaires et tests d'intégrations
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Déploiement de l'application sur le PlayStore et AppStore
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 200ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-laptop-code text-primary"></i>
+                                    Environnement technique
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-code text-primary"></i>
+                                            Langages & Frameworks
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-primary">Flutter</span>
+                                            <span class="badge badge-primary">Dart</span>
+                                            <span class="badge badge-primary">Laravel</span>
+                                            <span class="badge badge-primary">Swift</span>
+                                            <span class="badge badge-primary">Java</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-tools text-secondary"></i>
+                                            Outils & Plateformes
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-secondary">Firebase</span>
+                                            <span class="badge badge-secondary">Trello</span>
+                                            <span class="badge badge-secondary">Heroku</span>
+                                            <span class="badge badge-secondary">GitHub</span>
+                                            <span class="badge badge-secondary">PowerAMC</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-laptop-code text-accent"></i>
+                                            IDE & Méthodologies
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-accent">VS Code</span>
+                                            <span class="badge badge-accent">Android Studio</span>
+                                            <span class="badge badge-accent">Scrum</span>
+                                            <span class="badge badge-accent">UML</span>
+                                            <span class="badge badge-accent">Merise</span>
+                                            <span class="badge badge-accent">MVC</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SANNAU GROUPE -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">
+                                    Consultant Développeur & Formateur C# .NET
+                                </h3>
+                                <p class="text-primary flex items-center gap-2">
+                                    <i class="fas fa-building group-hover:rotate-12 transition-transform"></i>
+                                    Sanau Groupe - ABIC
+                                    <span class="badge badge-secondary badge-outline">Temps plein</span>
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    2021-2022
+                                </p>
+                                <p class="text-sm flex items-center gap-2">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                    Douala, Cameroun
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="divider divider-gradient">Responsabilités</div>
+
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <p class="text-base-content/80 leading-relaxed">
+                                    En tant que consultant développeur et formateur, j'ai travaillé sur divers projets de développement et j'ai formé des étudiants en programmation C# .NET.
+                                </p>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 100ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    Tâches réalisées
+                                </h4>
+                                <ul class="space-y-2 task-list">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Développement d'applications web et mobiles
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Formation en programmation C# .NET
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Conception de supports pédagogiques interactifs
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Suivi et évaluation des étudiants
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 200ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-laptop-code text-primary"></i>
+                                    Environnement technique
+                                </h4>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-code text-primary"></i>
+                                            Langages & Frameworks
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-primary skill-tag">C#</span>
+                                            <span class="badge badge-primary skill-tag">.NET</span>
+                                            <span class="badge badge-primary skill-tag">SQL</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-tools text-secondary"></i>
+                                            Outils
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-secondary skill-tag">VS Code</span>
+                                            <span class="badge badge-secondary skill-tag">Git</span>
+                                            <span class="badge badge-secondary skill-tag">MySQL</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <h5 class="font-medium flex items-center gap-2">
+                                            <i class="fas fa-laptop-code text-accent"></i>
+                                            Pédagogie
+                                        </h5>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="badge badge-accent skill-tag">Projets pratiques</span>
+                                            <span class="badge badge-accent skill-tag">Évaluations</span>
+                                            <span class="badge badge-accent skill-tag">Tutorat</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classgap Experience -->
+                <div class="experience-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 mt-8">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                            <div>
+                                <h3 class="card-title text-xl">Formateur académique C# .Net</h3>
+                                <p class="text-base-content/70">Classgap.com</p>
+                            </div>
+                            <div class="text-sm text-base-content/70 mt-2 md:mt-0">
+                                <span class="badge badge-ghost">Septembre 2021 - à nos jours</span>
+                            </div>
+                        </div>
+
+                        <div class="card-actions justify-end mt-4">
+                            <a href="https://www.classgap.com/me/cedric-499238" 
+                               target="_blank" 
+                               class="btn btn-primary btn-sm gap-2">
+                                <i class="fas fa-external-link-alt"></i>
+                                Voir le profil
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weeb Studio Cameroun (AGYL TECH) expériences -->
+                <div class="experience-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 mt-8">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                            <div>
+                                <h3 class="card-title text-xl">Junior Dev Stagiaire</h3>
+                                <p class="text-base-content/70">Weeb Studio Cameroun (AGYL TECH)</p>
+                            </div>
+                            <div class="text-sm text-base-content/70 mt-2 md:mt-0">
+                                <span class="badge badge-ghost">Juin 2021 – Octobre 2021</span>
+                                <span class="block mt-1">Douala, Cameroun (À distance)</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold mb-2">Projets et réalisations :</h4>
+                                <ul class="task-list space-y-2 ml-4">
+                                    <li>Participation au développement du back-end et intégration d'API pour plusieurs projets</li>
+                                    <li>Optimisation des performances et correction de bugs sur des applications en production</li>
+                                    <li>Développement d'une application mobile e-commerce avec gestion avancée des transactions</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 class="font-semibold mb-2">Projet notable :</h4>
+                                <div class="project-preview p-4 bg-base-200 rounded-lg">
+                                    <div class="flex items-start justify-between">
+                                        <div>
+                                            <h5 class="font-semibold">Bigoodee</h5>
+                                            <p class="text-sm text-base-content/70">
+                                                Application e-service de prestation de coiffure
+                                            </p>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <div class="rating rating-sm">
+                                                    <input type="radio" name="rating-weeb" class="mask mask-star-2 bg-orange-400" checked />
+                                                    <input type="radio" name="rating-weeb" class="mask mask-star-2 bg-orange-400" checked />
+                                                    <input type="radio" name="rating-weeb" class="mask mask-star-2 bg-orange-400" checked />
+                                                    <input type="radio" name="rating-weeb" class="mask mask-star-2 bg-orange-400" checked />
+                                                    <input type="radio" name="rating-weeb" class="mask mask-star-2 bg-orange-400" checked />
+                                                </div>
+                                                <span class="text-sm">4.5/5 sur Google Play</span>
+                                            </div>
+                                        </div>
+                                        <a href="https://play.google.com/store/apps/details?id=com.agyl.bigoodee" 
+                                           target="_blank"
+                                           class="btn btn-primary btn-sm">
+                                            Voir l'application
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -705,7 +1139,7 @@
                         <div class="badge badge-secondary">Mobile</div>
                     </div>
                     <p class="text-base-content/80 line-clamp-3">
-                        Application mobile e-commerce de services de coiffure avec plus de 10,000 téléchargements.
+                        Application mobile e-commerce dédiée aux services de coiffure. Permet aux utilisateurs de découvrir, réserver et payer des services de coiffure directement depuis leur smartphone.
                     </p>
                     <div class="flex items-center gap-2 my-2">
                         <div class="rating rating-sm">
@@ -1077,6 +1511,28 @@
 
     document.querySelector('.dropdown label').addEventListener('click', mobileMenuToggle);
 </script>
+<script>
+    // Fonction pour animer les éléments au scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.animate-slide-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
 
+        elements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            observer.observe(element);
+        });
+    }
+
+    // Initialiser les animations au chargement
+    document.addEventListener('DOMContentLoaded', animateOnScroll);
+</script>
 </body>
 </html>
