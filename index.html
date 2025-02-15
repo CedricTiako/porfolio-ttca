@@ -6,10 +6,8 @@
     <title>Portfolio - Cedric Aime Tiako Tchouameni</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -63,7 +61,7 @@
 <body class="min-h-screen bg-base-300">
 
 <!-- Navigation -->
-<div class="navbar bg-base-100 fixed top-0 z-50 shadow-lg">
+<div class="navbar bg-base-100 fixed top-0 z-50 shadow-lg backdrop-blur-sm bg-base-100/90">
     <div class="navbar-start">
         <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -72,38 +70,71 @@
                 </svg>
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#experience">Expériences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="hover:text-primary transition-colors">À propos</a></li>
+                <li><a href="#experience" class="hover:text-primary transition-colors">Expériences</a></li>
+                <li><a href="#projects" class="hover:text-primary transition-colors">Projets</a></li>
+                <li><a href="#skills" class="hover:text-primary transition-colors">Compétences</a></li>
+                <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                <li>
+                    <a href="https://github.com/CedricTiako" target="_blank" class="hover:text-primary transition-colors">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
             </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">Portfolio</a>
+        <a href="#" class="btn btn-ghost normal-case text-xl">
+            <span class="gradient-text font-bold">Portfolio</span>
+        </a>
     </div>
+    
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#experience">Expériences</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" class="hover:text-primary transition-colors">À propos</a></li>
+            <li><a href="#experience" class="hover:text-primary transition-colors">Expériences</a></li>
+            <li><a href="#projects" class="hover:text-primary transition-colors">Projets</a></li>
+            <li><a href="#skills" class="hover:text-primary transition-colors">Compétences</a></li>
+            <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
         </ul>
     </div>
-    <div class="navbar-end">
-        <label class="swap swap-rotate">
-            <input type="checkbox" class="theme-controller" value="synthwave" />
-            <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
-            <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
-        </label>
-        <a href="#about" class="btn btn-ghost">À propos</a>
-        <a href="#skills" class="btn btn-ghost">Compétences</a>
-        <a href="#experience" class="btn btn-ghost">Expérience</a>
-        <a href="#projects" class="btn btn-ghost">Projets</a>
-        <a href="#contact" class="btn btn-ghost">Contact</a>
+    
+    <div class="navbar-end gap-2">
+        <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </label>
+            <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                <li>
+                    <button class="flex justify-between" onclick="document.documentElement.setAttribute('data-theme', 'light')">
+                        Clair
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-between" onclick="document.documentElement.setAttribute('data-theme', 'dark')">
+                        Sombre
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-between" onclick="document.documentElement.setAttribute('data-theme', 'cyberpunk')">
+                        Cyberpunk
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        
         <a href="https://github.com/CedricTiako" 
            target="_blank" 
-           class="btn btn-primary btn-sm gap-2">
+           class="btn btn-primary btn-sm gap-2 hidden lg:flex">
             <i class="fab fa-github"></i>
             GitHub
         </a>
@@ -111,27 +142,148 @@
 </div>
 
 <!-- Hero Section -->
-<section id="hero" class="parallax h-screen flex items-center justify-center text-center text-white" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center;">
-    <div>
-        <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight drop-shadow-lg gradient-text hero-title">
-            Cedric Aime Tiako Tchouameni
-        </h1>
-        <p class="mt-4 text-lg sm:text-xl drop-shadow-lg hero-description">
-            Développeur Full Stack & Administrateur Système
-        </p>
-        <div class="mt-6 flex flex-wrap justify-center gap-4">
-            <a href="mailto:Tiako1998@gmail.com" class="btn btn-primary">
-                <i class="fas fa-envelope mr-2"></i>Tiako1998@gmail.com
-            </a>
-            <a href="tel:+237677334686" class="btn btn-secondary">
-                <i class="fas fa-phone mr-2"></i>+237 677 334 686
-            </a>
-            <a href="https://linkedin.com/in/cedric-aime-tiako-tchouameni-1b621b175/" target="_blank" class="btn btn-accent">
-                <i class="fab fa-linkedin mr-2"></i>LinkedIn
-            </a>
+<section class="hero min-h-screen bg-base-200 py-16 relative overflow-hidden">
+    <!-- Animated background -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary animate-gradient"></div>
+        <div class="absolute inset-0 bg-grid-pattern"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Left Column - Introduction -->
+            <div class="lg:w-1/2 space-y-8">
+                <div class="space-y-4">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate__animated animate__fadeInUp">
+                        <span class="gradient-text">TIAKO TCHOUAMENI</span>
+                        <span class="block gradient-text">CEDRIC AIME</span>
+                        <span class="block text-2xl mt-4 text-primary font-medium">Développeur Full Stack & Administrateur Système</span>
+                    </h1>
+                    
+                    <p class="text-lg text-base-content/80 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
+                        Développeur Full Stack & Administrateur Système avec près de 4 ans d’expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="mailto:Tiako1998@gmail.com" 
+                       class="btn btn-primary gap-2 hover:scale-105 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                        Me contacter
+                    </a>
+                    <a href="https://www.classgap.com/me/cedric-499238" 
+                       target="_blank"
+                       class="btn btn-outline gap-2 hover:scale-105 transition-transform">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        Voir mon profil Formateur
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap gap-6 items-center text-sm animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="flex items-center gap-2 hover:text-primary transition-colors">
+                        <i class="fas fa-map-marker-alt text-primary text-lg"></i>
+                        <span>Douala, Cameroun</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-primary transition-colors">
+                        <i class="fas fa-envelope text-primary text-lg"></i>
+                        <span>Tiako1998@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-2 hover:text-primary transition-colors">
+                        <i class="fas fa-globe text-primary text-lg"></i>
+                        <span>Français (Excellent), Anglais (Moyen)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Skills Overview -->
+            <div class="lg:w-1/2 space-y-6 animate__animated animate__fadeInRight animate__delay-1s">
+                <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4 flex items-center gap-2">
+                            <i class="fas fa-code text-primary text-2xl"></i>
+                            <span class="gradient-text">Compétences Clés</span>
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="space-y-3">
+                                <h3 class="font-semibold text-lg mb-3">Langages</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge badge-primary">PHP</span>
+                                    <span class="badge badge-primary">Node.Js</span>
+                                    <span class="badge badge-primary">C#</span>
+                                    <span class="badge badge-primary">C/C++</span>
+                                    <span class="badge badge-primary">TypeScript</span>
+                                    <span class="badge badge-primary">JavaScript</span>
+                                    
+                                    <span class="badge badge-primary">Dart</span>
+                                    <span class="badge badge-primary">HTML/CSS</span>
+                                    <span class="badge badge-primary">SQL</span>
+                                    <span class="badge badge-primary">Java</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="font-semibold text-lg mb-3">Frameworks & Bibliothèques</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge badge-secondary">Angular</span>
+                                    <span class="badge badge-secondary">Node.js</span>
+                                    <span class="badge badge-secondary">Express</span>
+                                    <span class="badge badge-secondary">.NET</span>
+                                    <span class="badge badge-secondary">Ionic</span>
+                                    <span class="badge badge-secondary">Flutter</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="font-semibold text-lg mb-3">DevOps & Outils</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge badge-accent">GitHub</span>
+                                    <span class="badge badge-accent">GitLab</span>
+                                    <span class="badge badge-accent">Docker</span>
+                                    <span class="badge badge-accent">Azure</span>
+                                    <span class="badge badge-accent">Heroku</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h3 class="font-semibold text-lg mb-3">Méthodologies & Gestion</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="badge badge-info">Scrum Master I</span>
+                                    <span class="badge badge-info">Agile</span>
+                                    <span class="badge badge-info">UML</span>
+                                    <span class="badge badge-info">Merise</span>
+                                    <span class="badge badge-info">MVC</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<style>
+    .bg-grid-pattern {
+        background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+        background-size: 30px 30px;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 15s ease infinite;
+    }
+</style>
 
 <!-- About Section -->
 <section id="about" class="py-16 bg-base-200">
@@ -288,7 +440,6 @@
                                 <span class="badge badge-primary">HTML/CSS</span>
                                 <span class="badge badge-primary">JavaScript</span>
                                 <span class="badge badge-primary">PHP</span>
-                                <span class="badge badge-primary">C#</span>
                                 <span class="badge badge-secondary">Flutter</span>
                                 <span class="badge badge-secondary">Ionic</span>
                                 <span class="badge badge-secondary">Angular</span>
@@ -349,19 +500,103 @@
                 </div>
             </div>
 
-            <!-- Forama -->
-            <div class="card bg-base-100 shadow-xl project-card">
+            <!-- FORAMA CAMEROUN -->
+            <div class="card bg-base-100 shadow-xl project-card hover:shadow-2xl transition-all duration-300">
                 <div class="card-body">
-                    <h3 class="card-title text-2xl">Développeur Web et Mobile & Coach Développeurs</h3>
-                    <p class="text-primary">Forama Cameroun SARL | Mai 2022 – Janvier 2023</p>
-                    <ul class="mt-4 space-y-2 list-disc list-inside">
-                        <li>Refonte et optimisation du back-end, réduisant les bugs de 75%</li>
-                        <li>Déploiement d'applications web et mobiles (5 000+ téléchargements)</li>
-                        <li>Mise en place de tests unitaires et d'intégration</li>
-                    </ul>
-                    <div class="mt-4">
-                        <h4 class="font-semibold mb-2">Projet notable:</h4>
-                        <a href="#" class="btn btn-sm btn-outline">PomPay : Application de Mobile Money</a>
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h3 class="card-title text-2xl mb-2">Développeur Web et Mobile</h3>
+                            <p class="text-primary flex items-center gap-2">
+                                <i class="fas fa-building"></i>FORAMA CAMEROUN SARL
+                                <span class="badge badge-secondary">Temps plein</span>
+                            </p>
+                            <p class="text-sm flex items-center gap-2 mt-1">
+                                <i class="fas fa-calendar"></i>Mai 2022 - Janvier 2023
+                            </p>
+                            <p class="text-sm flex items-center gap-2 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>Douala, Cameroun
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider">Projet PomPay</div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="mb-4 text-base-content/80">
+                                Pour les particuliers, PomPay est une application en partie gratuite qui facilite les dépôts et les transferts d'argent entre utilisateurs.
+                            </p>
+                            <h4 class="font-semibold text-lg mb-3">Applications développées</h4>
+                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
+                                <li>PomPay</li>
+                                <li>PomPay Agent</li>
+                                <li>PomPay Store</li>
+                                <li>PomPay Delivery</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Tâches réalisées</h4>
+                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
+                                <li>Conception des interfaces avec Flutter / Dart</li>
+                                <li>Revue de code du côté Back-End</li>
+                                <li>Fragmentation de l'application suivant l'architecture de Micro-App</li>
+                                <li>Intégration Front-End avec l'API REST</li>
+                                <li>Réalisation des tests unitaires et tests d'intégrations</li>
+                                <li>Déploiement de l'application sur le PlayStore et AppStore</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Environnement technique</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <!-- Langages & Frameworks -->
+                                <div class="space-y-2">
+                                    <h5 class="font-medium flex items-center gap-2">
+                                        <i class="fas fa-code text-primary"></i>
+                                        Langages & Frameworks
+                                    </h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="badge badge-primary">Flutter</span>
+                                        <span class="badge badge-primary">Dart</span>
+                                        <span class="badge badge-primary">Laravel</span>
+                                        <span class="badge badge-primary">Swift</span>
+                                        <span class="badge badge-primary">Java</span>
+                                    </div>
+                                </div>
+
+                                <!-- Outils & Plateformes -->
+                                <div class="space-y-2">
+                                    <h5 class="font-medium flex items-center gap-2">
+                                        <i class="fas fa-tools text-secondary"></i>
+                                        Outils & Plateformes
+                                    </h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="badge badge-secondary">Firebase</span>
+                                        <span class="badge badge-secondary">Trello</span>
+                                        <span class="badge badge-secondary">Heroku</span>
+                                        <span class="badge badge-secondary">GitHub</span>
+                                        <span class="badge badge-secondary">PowerAMC</span>
+                                    </div>
+                                </div>
+
+                                <!-- IDE & Méthodologies -->
+                                <div class="space-y-2">
+                                    <h5 class="font-medium flex items-center gap-2">
+                                        <i class="fas fa-laptop-code text-accent"></i>
+                                        IDE & Méthodologies
+                                    </h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="badge badge-accent">VS Code</span>
+                                        <span class="badge badge-accent">Android Studio</span>
+                                        <span class="badge badge-accent">Scrum</span>
+                                        <span class="badge badge-accent">UML</span>
+                                        <span class="badge badge-accent">Merise</span>
+                                        <span class="badge badge-accent">MVC</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -446,46 +681,20 @@
                         Associé à Centre de Formation Professionnel Speedy Print
                     </p>
 
-                    <div class="divider my-2"></div>
-
-                    <p class="text-base-content/80">
-                        Classe PHP pour gérer les interactions avec une base de données MySQL en utilisant PDO. Elle offre des méthodes pratiques pour créer, lire, mettre à jour et supprimer des enregistrements, ainsi que pour exécuter des requêtes personnalisées et des procédures stockées.
+                    <p class="text-base-content/80 line-clamp-3">
+                        Classe PHP pour gérer les interactions avec une base de données MySQL en utilisant PDO.
                     </p>
 
-                    <div class="mt-4">
-                        <h4 class="font-semibold mb-2">Fonctionnalités</h4>
-                        <ul class="space-y-1">
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                <span>Opérations CRUD</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                <span>Requêtes personnalisées</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                <span>Procédures stockées</span>
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <i class="fas fa-check text-success text-sm"></i>
-                                <span>Utilisation de PDO</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-actions justify-start mt-4">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="badge badge-outline">PHP</span>
-                            <span class="badge badge-outline">MySQL</span>
-                            <span class="badge badge-outline">PDO</span>
-                            <span class="badge badge-outline">Database</span>
-                        </div>
+                    <div class="card-actions justify-end mt-4">
+                        <button class="btn btn-primary btn-sm" onclick="mysql_modal.showModal()">
+                            Voir plus
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Autres projets existants -->
+            <!-- Bigoodee -->
             <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="card-body">
                     <div class="flex justify-between items-start">
@@ -495,7 +704,7 @@
                         </h3>
                         <div class="badge badge-secondary">Mobile</div>
                     </div>
-                    <p class="text-base-content/80">
+                    <p class="text-base-content/80 line-clamp-3">
                         Application mobile e-commerce de services de coiffure avec plus de 10,000 téléchargements.
                     </p>
                     <div class="flex items-center gap-2 my-2">
@@ -509,15 +718,15 @@
                         <span class="text-sm">4.5/5</span>
                     </div>
                     <div class="card-actions justify-end">
-                        <a href="https://play.google.com/store/apps/details?id=com.agyl.bigoodee&hl=fr" 
-                           target="_blank" 
-                           class="btn btn-primary btn-sm">
-                            <i class="fab fa-google-play mr-2"></i>Google Play
-                        </a>
+                        <button class="btn btn-primary btn-sm" onclick="bigoodee_modal.showModal()">
+                            Voir plus
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
 
+            <!-- CMR+ -->
             <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <div class="card-body">
                     <div class="flex justify-between items-start">
@@ -527,21 +736,218 @@
                         </h3>
                         <div class="badge badge-secondary">Mobile</div>
                     </div>
-                    <p class="text-base-content/80">
+                    <p class="text-base-content/80 line-clamp-3">
                         Application de fidélisation client permettant aux consommateurs de rentabiliser leurs achats.
                     </p>
                     <div class="card-actions justify-end mt-4">
-                        <a href="https://appadvice.com/app/cmr/1601511291" 
-                           target="_blank" 
-                           class="btn btn-primary btn-sm">
-                            <i class="fas fa-external-link-alt mr-2"></i>Voir le projet
-                        </a>
+                        <button class="btn btn-primary btn-sm" onclick="cmr_modal.showModal()">
+                            Voir plus
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modals -->
+<!-- ConnectMySQLDB Modal -->
+<dialog id="mysql_modal" class="modal modal-bottom sm:modal-middle">
+    <form method="dialog" class="modal-box">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <h3 class="font-bold text-2xl mb-4">
+            <i class="fas fa-database text-primary mr-2"></i>
+            ConnectMySQLDB
+        </h3>
+        <div class="space-y-4">
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Description</h4>
+                <p class="text-base-content/80">
+                    Classe PHP pour gérer les interactions avec une base de données MySQL en utilisant PDO. Elle offre des méthodes pratiques pour créer, lire, mettre à jour et supprimer des enregistrements, ainsi que pour exécuter des requêtes personnalisées et des procédures stockées.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Fonctionnalités</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Opérations CRUD complètes</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Requêtes personnalisées</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Support des procédures stockées</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Gestion des transactions</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Sécurité contre les injections SQL</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Technologies utilisées</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">PHP</span>
+                    <span class="badge badge-primary">MySQL</span>
+                    <span class="badge badge-secondary">PDO</span>
+                    <span class="badge badge-accent">SQL</span>
+                    <span class="badge badge-info">Database Design</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>
+
+<!-- Bigoodee Modal -->
+<dialog id="bigoodee_modal" class="modal modal-bottom sm:modal-middle">
+    <form method="dialog" class="modal-box">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <h3 class="font-bold text-2xl mb-4">
+            <i class="fas fa-mobile-alt text-primary mr-2"></i>
+            Bigoodee
+        </h3>
+        <div class="space-y-4">
+            <div class="flex items-center gap-4">
+                <div class="rating rating-md">
+                    <input type="radio" name="rating-modal" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-modal" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-modal" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-modal" class="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-modal" class="mask mask-star-2 bg-orange-400" checked />
+                </div>
+                <span>4.5/5 sur Google Play</span>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Description</h4>
+                <p class="text-base-content/80">
+                    Application mobile e-commerce dédiée aux services de coiffure. Permet aux utilisateurs de découvrir, réserver et payer des services de coiffure directement depuis leur smartphone.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Réalisations</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-download text-success"></i>
+                        <span>Plus de 10,000 téléchargements</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Développement du backend</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Intégration des API de paiement</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Optimisation des performances</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Technologies utilisées</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">Flutter</span>
+                    <span class="badge badge-secondary">Firebase</span>
+                    <span class="badge badge-accent">REST API</span>
+                    <span class="badge badge-info">Payment Gateway</span>
+                </div>
+            </div>
+
+            <div class="card-actions justify-end mt-4">
+                <a href="https://play.google.com/store/apps/details?id=com.agyl.bigoodee&hl=fr" 
+                   target="_blank" 
+                   class="btn btn-primary gap-2">
+                    <i class="fab fa-google-play"></i>
+                    Voir sur Google Play
+                </a>
+            </div>
+        </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>
+
+<!-- CMR+ Modal -->
+<dialog id="cmr_modal" class="modal modal-bottom sm:modal-middle">
+    <form method="dialog" class="modal-box">
+        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <h3 class="font-bold text-2xl mb-4">
+            <i class="fas fa-trophy text-primary mr-2"></i>
+            CMR+ (Customer Market Reward)
+        </h3>
+        <div class="space-y-4">
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Description</h4>
+                <p class="text-base-content/80">
+                    Application mobile innovante permettant aux consommateurs de rentabiliser leurs achats tout en fidélisant les utilisateurs aux produits. Un système de récompenses qui révolutionne l'expérience shopping.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Fonctionnalités clés</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Système de points de fidélité</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Scan de tickets de caisse</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Catalogue de récompenses</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fas fa-check text-success"></i>
+                        <span>Géolocalisation des magasins partenaires</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold text-lg mb-2">Technologies utilisées</h4>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge badge-primary">React Native</span>
+                    <span class="badge badge-secondary">Node.js</span>
+                    <span class="badge badge-accent">MongoDB</span>
+                    <span class="badge badge-info">OCR Technology</span>
+                    <span class="badge badge-success">Google Maps API</span>
+                </div>
+            </div>
+
+            <div class="card-actions justify-end mt-4">
+                <a href="https://appadvice.com/app/cmr/1601511291" 
+                   target="_blank" 
+                   class="btn btn-primary gap-2">
+                    <i class="fas fa-external-link-alt"></i>
+                    Voir l'application
+                </a>
+            </div>
+        </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 bg-base-200">
