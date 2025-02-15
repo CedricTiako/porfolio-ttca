@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Cedric Aime Tiako Tchouameni - Développeur Full Stack spécialisé en .NET, React, et développement mobile">
+    <meta name="keywords" content="développeur, full stack, web, mobile, .NET, React, Flutter, Laravel, C#, JavaScript">
+    <meta name="author" content="Cedric Aime Tiako Tchouameni">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Portfolio - Cedric Aime Tiako Tchouameni">
+    <meta property="og:description" content="Développeur Full Stack passionné par la création d'applications web et mobiles innovantes">
+    <meta property="og:type" content="website">
     <title>Portfolio - Cedric Aime Tiako Tchouameni</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
@@ -36,54 +43,61 @@
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --transition-speed: 0.3s;
+            --hover-transform: translateY(-5px);
+            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        .gradient-text {
-            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #6366f1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradient 3s ease infinite;
-            background-size: 200% 200%;
+        .animate-slide-in {
+            animation: slideIn 0.5s ease forwards;
         }
 
-        .card-hover {
-            transition: transform 0.3s ease-in-out;
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .card-hover:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-    <style>
         .experience-card {
-            transition: all 0.3s ease-in-out;
+            transition: all var(--transition-speed) ease-in-out;
         }
     
         .experience-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: var(--hover-transform);
+            box-shadow: var(--card-shadow);
         }
-    
-        .tech-badge {
+
+        .tech-badge, .skill-tag {
             transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
         }
     
-        .tech-badge:hover {
+        .tech-badge:hover, .skill-tag:hover {
             transform: scale(1.1);
         }
     
-        .project-preview {
-            transition: all 0.3s ease;
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
         }
     
-        .project-preview:hover {
-            transform: scale(1.02);
-            cursor: pointer;
+        .skill-tag:hover::before {
+            left: 100%;
         }
-    
+
         .task-list li {
             transition: all 0.2s ease;
             padding: 0.5rem;
@@ -109,52 +123,38 @@
             height: 4px;
             background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
             border-radius: 2px;
-            transition: width 0.3s ease;
+            transition: width var(--transition-speed) ease;
         }
     
         .section-title:hover::after {
             width: 100%;
         }
-    
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    
-        .animate-slide-in {
-            animation: slideIn 0.5s ease forwards;
-        }
-    
+
         .divider-gradient {
             background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
             height: 2px;
             opacity: 0.5;
         }
-    
-        .skill-tag {
-            position: relative;
-            overflow: hidden;
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+            background-size: 200% 200%;
         }
-    
-        .skill-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
+
+        html {
+            scroll-behavior: smooth;
         }
-    
-        .skill-tag:hover::before {
-            left: 100%;
+
+        .card-hover {
+            transition: transform var(--transition-speed) ease-in-out;
+        }
+
+        .card-hover:hover {
+            transform: var(--hover-transform);
         }
     </style>
 </head>
@@ -499,28 +499,65 @@
             <!-- Experience Cards -->
             <div class="grid gap-8">
                                 <!-- Classgap Experience -->
-                                <div class="experience-card card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 mt-8">
-                                    <div class="card-body">
-                                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                                            <div>
-                                                <h3 class="card-title text-xl">Formateur académique C# .Net</h3>
-                                                <p class="text-base-content/70">Classgap.com</p>
-                                            </div>
-                                            <div class="text-sm text-base-content/70 mt-2 md:mt-0">
-                                                <span class="badge badge-ghost">Septembre 2021 - à nos jours</span>
-                                            </div>
-                                        </div>
-                
-                                        <div class="card-actions justify-end mt-4">
-                                            <a href="https://www.classgap.com/me/cedric-499238" 
-                                               target="_blank" 
-                                               class="btn btn-primary btn-sm">
-                                                <i class="fas fa-external-link-alt"></i>
-                                                Voir le profil
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">Formateur académique C# .Net</h3>
+                                <p class="text-base-content/70">Classgap.com</p>
+                                <p class="text-sm text-base-content/70">
+                                    <i class="fas fa-calendar-alt text-primary mr-2"></i>
+                                    Septembre 2021 - à nos jours
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="divider divider-gradient">Responsabilités</div>
+
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <p class="text-base-content/80 leading-relaxed">
+                                    Formation personnalisée en programmation C# .NET pour des étudiants et professionnels.
+                                </p>
+                            </div>
+
+                            <div class="animate-slide-in" style="animation-delay: 100ms;">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-tasks text-primary"></i>
+                                    Tâches réalisées
+                                </h4>
+                                <ul class="space-y-2 task-list">
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Formation en programmation C# .NET
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Accompagnement personnalisé des étudiants
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        Création de contenus pédagogiques
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-actions justify-end mt-4">
+                                <a href="https://www.classgap.com/me/cedric-499238" 
+                                   target="_blank" 
+                                   class="btn btn-primary btn-sm">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Voir le profil
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Zen Africa -->
                 <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
                     <div class="card-body">
@@ -999,8 +1036,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
                 <!-- Weeb Studio Cameroun (AGYL TECH) expériences -->
                 <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
