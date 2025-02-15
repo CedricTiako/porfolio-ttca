@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Cedric Aime Tiako Tchouameni</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'gradient': 'gradient 8s linear infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            },
+            plugins: [require("daisyui")],
+            daisyui: {
+                themes: ["light", "dark", "cyberpunk"],
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-base-300">
+
+<!-- Navigation -->
+<div class="navbar bg-base-100 fixed top-0 z-50 shadow-lg">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+            </label>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <a class="btn btn-ghost normal-case text-xl">Portfolio</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Expériences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="navbar-end">
+        <label class="swap swap-rotate">
+            <input type="checkbox" class="theme-controller" value="synthwave" />
+            <svg class="swap-on fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+            <svg class="swap-off fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+        </label>
+        <a href="#about" class="btn btn-ghost">À propos</a>
+        <a href="#skills" class="btn btn-ghost">Compétences</a>
+        <a href="#experience" class="btn btn-ghost">Expérience</a>
+        <a href="#projects" class="btn btn-ghost">Projets</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+        <a href="https://github.com/CedricTiako" 
+           target="_blank" 
+           class="btn btn-primary btn-sm gap-2">
+            <i class="fab fa-github"></i>
+            GitHub
+        </a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section id="hero" class="parallax h-screen flex items-center justify-center text-center text-white" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center;">
+    <div>
+        <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight drop-shadow-lg gradient-text hero-title">
+            Cedric Aime Tiako Tchouameni
+        </h1>
+        <p class="mt-4 text-lg sm:text-xl drop-shadow-lg hero-description">
+            Développeur Full Stack & Administrateur Système
+        </p>
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="mailto:Tiako1998@gmail.com" class="btn btn-primary">
+                <i class="fas fa-envelope mr-2"></i>Tiako1998@gmail.com
+            </a>
+            <a href="tel:+237677334686" class="btn btn-secondary">
+                <i class="fas fa-phone mr-2"></i>+237 677 334 686
+            </a>
+            <a href="https://linkedin.com/in/cedric-aime-tiako-tchouameni-1b621b175/" target="_blank" class="btn btn-accent">
+                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 bg-base-200">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-8 gradient-text">À propos de moi</h2>
+        <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h3 class="card-title text-2xl mb-4">Objectif Professionnel</h3>
+                <p class="text-lg leading-relaxed">
+                    Développeur Full Stack & Administrateur Système avec près de 4 ans d'expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
+                </p>
+                <div class="mt-6">
+                    <h4 class="text-xl font-semibold mb-3">Langues</h4>
+                    <div class="flex gap-4">
+                        <div class="badge badge-lg">🇫🇷 Français : Excellent (C1)</div>
+                        <div class="badge badge-lg">🇬🇧 Anglais : Intermédiaire (A1)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-16 bg-base-300">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Compétences Techniques</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Back-End -->
+            <div class="card bg-base-100 shadow-xl skill-card">
+                <div class="card-body">
+                    <h3 class="card-title text-xl mb-4">
+                        <i class="fas fa-server text-primary mr-2"></i>Back-End
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>PHP Core</li>
+                        <li>Node.js</li>
+                        <li>Laravel</li>
+                        <li>C#</li>
+                        <li>ASP.Net Core</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Front-End -->
+            <div class="card bg-base-100 shadow-xl skill-card">
+                <div class="card-body">
+                    <h3 class="card-title text-xl mb-4">
+                        <i class="fas fa-code text-secondary mr-2"></i>Front-End
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>HTML5/CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Angular</li>
+                        <li>Flutter</li>
+                        <li>Dart</li>
+                        <li>Ionic</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bases de Données -->
+            <div class="card bg-base-100 shadow-xl skill-card">
+                <div class="card-body">
+                    <h3 class="card-title text-xl mb-4">
+                        <i class="fas fa-database text-accent mr-2"></i>Bases de Données
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>SQL Server</li>
+                        <li>Firebase</li>
+                        <li>Entity Framework Core</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Infrastructure -->
+            <div class="card bg-base-100 shadow-xl skill-card">
+                <div class="card-body">
+                    <h3 class="card-title text-xl mb-4">
+                        <i class="fas fa-network-wired text-info mr-2"></i>Infrastructure
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>Ubuntu</li>
+                        <li>Docker</li>
+                        <li>VPS</li>
+                        <li>Cloud Hosting</li>
+                        <li>CI/CD</li>
+                        <li>Git/GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-16 bg-base-200">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Expérience Professionnelle</h2>
+        
+        <div class="timeline space-y-12">
+            <!-- Zen Africa -->
+            <div class="card bg-base-100 shadow-xl project-card hover:shadow-2xl transition-all duration-300">
+                <div class="card-body">
+                    <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                        <div>
+                            <h3 class="card-title text-2xl mb-2">Responsable Système & Développeur Full Stack</h3>
+                            <p class="text-primary flex items-center gap-2">
+                                <i class="fas fa-building"></i>Zen Africa SAS
+                                <span class="badge badge-secondary">Temps plein</span>
+                            </p>
+                            <p class="text-sm flex items-center gap-2 mt-1">
+                                <i class="fas fa-calendar"></i>Janvier 2023 - Présent (2 ans 2 mois)
+                            </p>
+                            <p class="text-sm flex items-center gap-2 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>Douala I, Région du Littoral, Cameroun
+                                <span class="badge badge-outline">Sur site</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Description du poste</h4>
+                            <p class="text-base-content/80 leading-relaxed">
+                                En tant que développeur d'applications Web et mobiles, je conçois, développe et maintiens des applications Web et mobiles. Je suis passionné par la création d'applications fonctionnelles et attrayantes en utilisant des langages de programmation, des frameworks et d'autres outils.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Responsabilités principales</h4>
+                            <ul class="space-y-2 list-disc list-inside text-base-content/80">
+                                <li>Conception d'applications Web et mobiles</li>
+                                <li>Développement d'applications avec HTML, CSS, JavaScript et PHP</li>
+                                <li>Tests et assurance qualité des applications</li>
+                                <li>Maintenance des applications existantes</li>
+                                <li>Collaboration avec les clients pour comprendre leurs besoins</li>
+                                <li>Gestion de projets de développement</li>
+                                <li>Gestion et administration de 12 serveurs (disponibilité 99%)</li>
+                                <li>Optimisation des bases de données MySQL et PostgreSQL</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Compétences techniques utilisées</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="badge badge-primary">HTML/CSS</span>
+                                <span class="badge badge-primary">JavaScript</span>
+                                <span class="badge badge-primary">PHP</span>
+                                <span class="badge badge-primary">C#</span>
+                                <span class="badge badge-secondary">Flutter</span>
+                                <span class="badge badge-secondary">Ionic</span>
+                                <span class="badge badge-secondary">Angular</span>
+                                <span class="badge badge-secondary">Vue</span>
+                                <span class="badge badge-accent">Laravel</span>
+                                <span class="badge badge-accent">Symfony</span>
+                                <span class="badge badge-info">MySQL</span>
+                                <span class="badge badge-info">PostgreSQL</span>
+                                <span class="badge badge-info">MongoDB</span>
+                                <span class="badge badge-success">Scrum</span>
+                                <span class="badge badge-success">Kanban</span>
+                                <span class="badge badge-warning">OWASP</span>
+                                <span class="badge badge-warning">PCI DSS</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3">Projets notables</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="card bg-base-200">
+                                    <div class="card-body p-4">
+                                        <h5 class="card-title text-sm">Ballon d'Or Cameroun (MTN)</h5>
+                                        <p class="text-xs">Plateforme de vote des meilleurs joueurs de football</p>
+                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
+                                    </div>
+                                </div>
+                                <div class="card bg-base-200">
+                                    <div class="card-body p-4">
+                                        <h5 class="card-title text-sm">Eneo EasyLight</h5>
+                                        <p class="text-xs">Gestion des services électriques</p>
+                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
+                                    </div>
+                                </div>
+                                <div class="card bg-base-200">
+                                    <div class="card-body p-4">
+                                        <h5 class="card-title text-sm">MTN Roaming & MS365</h5>
+                                        <p class="text-xs">Portails d'abonnement et services télécoms</p>
+                                        <a href="#" class="link link-primary text-xs">Voir le projet</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speedy Print -->
+            <div class="card bg-base-100 shadow-xl project-card">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl">Formateur & Enseignant en Programmation</h3>
+                    <p class="text-primary">Centre de Formation Professionnel Speedy Print | Décembre 2023 – Septembre 2024</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li>Formation en programmation (C/C++, PHP)</li>
+                        <li>Enseignement des notions d'algorithmique</li>
+                        <li>Enseignement des bases de données SQL</li>
+                        <li>Conception de supports pédagogiques interactifs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Forama -->
+            <div class="card bg-base-100 shadow-xl project-card">
+                <div class="card-body">
+                    <h3 class="card-title text-2xl">Développeur Web et Mobile & Coach Développeurs</h3>
+                    <p class="text-primary">Forama Cameroun SARL | Mai 2022 – Janvier 2023</p>
+                    <ul class="mt-4 space-y-2 list-disc list-inside">
+                        <li>Refonte et optimisation du back-end, réduisant les bugs de 75%</li>
+                        <li>Déploiement d'applications web et mobiles (5 000+ téléchargements)</li>
+                        <li>Mise en place de tests unitaires et d'intégration</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4 class="font-semibold mb-2">Projet notable:</h4>
+                        <a href="#" class="btn btn-sm btn-outline">PomPay : Application de Mobile Money</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autres expériences -->
+            <div class="card bg-base-100 shadow-xl project-card">
+                <div class="card-body">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-semibold">Consultant Développeur & Formateur C# .NET</h3>
+                            <p class="text-primary">Sanau Groupe - ABIC | 2021-2022</p>
+                            <a href="#" class="btn btn-sm btn-outline mt-2">CRM+ : Plateforme de fidélisation client</a>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Junior Dev Stagiaire</h3>
+                            <p class="text-primary">Weeb Studio Cameroun | 2021</p>
+                            <a href="#" class="btn btn-sm btn-outline mt-2">Bigoodee : Application e-service de coiffure</a>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Formateur C# .NET</h3>
+                            <p class="text-primary">Classgap.com | 2021 – Présent</p>
+                            <p>Formation de plus de 45 étudiants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formation Section -->
+<section id="education" class="py-16 bg-base-300">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Formation & Certifications</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title">BTS en Génie Logiciel</h3>
+                    <p>IUC (ISTDI), Douala</p>
+                    <p class="text-primary">2021</p>
+                </div>
+            </div>
+            
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title">Certification Développement Web</h3>
+                    <p>Orange Digital Center</p>
+                    <p class="text-primary">2021</p>
+                </div>
+            </div>
+            
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h3 class="card-title">Baccalauréat C</h3>
+                    <p>Collège Sainte Jeanne d'Arc, Nkongsamba</p>
+                    <p class="text-primary">2017</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-base-300">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projets</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- ConnectMySQLDB -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-database text-primary mr-2"></i>
+                            ConnectMySQLDB
+                        </h3>
+                        <div class="badge badge-secondary">PHP</div>
+                    </div>
+                    
+                    <p class="text-sm text-base-content/70 mt-2">
+                        Associé à Centre de Formation Professionnel Speedy Print
+                    </p>
+
+                    <div class="divider my-2"></div>
+
+                    <p class="text-base-content/80">
+                        Classe PHP pour gérer les interactions avec une base de données MySQL en utilisant PDO. Elle offre des méthodes pratiques pour créer, lire, mettre à jour et supprimer des enregistrements, ainsi que pour exécuter des requêtes personnalisées et des procédures stockées.
+                    </p>
+
+                    <div class="mt-4">
+                        <h4 class="font-semibold mb-2">Fonctionnalités</h4>
+                        <ul class="space-y-1">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                <span>Opérations CRUD</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                <span>Requêtes personnalisées</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                <span>Procédures stockées</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-success text-sm"></i>
+                                <span>Utilisation de PDO</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card-actions justify-start mt-4">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-outline">PHP</span>
+                            <span class="badge badge-outline">MySQL</span>
+                            <span class="badge badge-outline">PDO</span>
+                            <span class="badge badge-outline">Database</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autres projets existants -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-mobile-alt text-primary mr-2"></i>
+                            Bigoodee
+                        </h3>
+                        <div class="badge badge-secondary">Mobile</div>
+                    </div>
+                    <p class="text-base-content/80">
+                        Application mobile e-commerce de services de coiffure avec plus de 10,000 téléchargements.
+                    </p>
+                    <div class="flex items-center gap-2 my-2">
+                        <div class="rating rating-sm">
+                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
+                        </div>
+                        <span class="text-sm">4.5/5</span>
+                    </div>
+                    <div class="card-actions justify-end">
+                        <a href="https://play.google.com/store/apps/details?id=com.agyl.bigoodee&hl=fr" 
+                           target="_blank" 
+                           class="btn btn-primary btn-sm">
+                            <i class="fab fa-google-play mr-2"></i>Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-trophy text-primary mr-2"></i>
+                            CMR+
+                        </h3>
+                        <div class="badge badge-secondary">Mobile</div>
+                    </div>
+                    <p class="text-base-content/80">
+                        Application de fidélisation client permettant aux consommateurs de rentabiliser leurs achats.
+                    </p>
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://appadvice.com/app/cmr/1601511291" 
+                           target="_blank" 
+                           class="btn btn-primary btn-sm">
+                            <i class="fas fa-external-link-alt mr-2"></i>Voir le projet
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-base-200">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Contact</h2>
+        <p class="mt-4 text-lg text-base-content/80 max-w-2xl mx-auto">
+            Vous souhaitez collaborer ou discuter d'un projet ? Contactez-moi via les moyens ci-dessous. Je suis impatient d’échanger avec vous !
+        </p>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Email -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body items-center text-center">
+                    <i class="fas fa-envelope text-4xl text-primary mb-4"></i>
+                    <h3 class="card-title">Email</h3>
+                    <p class="text-base-content/80">cedrictiako@gmail.com</p>
+                    <div class="card-actions">
+                        <a href="mailto:cedrictiako@gmail.com" class="btn btn-primary btn-sm">Envoyer un email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body items-center text-center">
+                    <i class="fab fa-linkedin text-4xl text-primary mb-4"></i>
+                    <h3 class="card-title">LinkedIn</h3>
+                    <p class="text-base-content/80">Restez connecté professionnellement</p>
+                    <div class="card-actions">
+                        <a href="https://www.linkedin.com/in/cedric-tiako" 
+                           target="_blank" 
+                           class="btn btn-primary btn-sm">Voir le profil</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div class="card-body items-center text-center">
+                    <i class="fab fa-github text-4xl text-primary mb-4"></i>
+                    <h3 class="card-title">GitHub</h3>
+                    <p class="text-base-content/80">Découvrez mes projets open source</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/CedricTiako" 
+                           target="_blank" 
+                           class="btn btn-primary btn-sm">Voir mes repos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-6 text-center text-gray-400">
+    <p>&copy; 2025 Cedric Aime Tiako Tchouameni. Tous droits réservés.</p>
+    <p class="mt-2">
+        Fièrement conçu avec <a href="#" class="text-yellow-400 hover:underline">HTML</a>, <a href="#" class="text-yellow-400 hover:underline">CSS</a>, et <a href="#" class="text-yellow-400 hover:underline">Tailwind CSS</a>.
+    </p>
+</footer>
+
+<script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animation pour le titre principal
+    gsap.from(".hero-title", {
+        duration: 1.5,
+        y: 100,
+        opacity: 0,
+        ease: "power4.out"
+    });
+
+    // Animation pour la description
+    gsap.from(".hero-description", {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: "power4.out",
+        delay: 0.5
+    });
+
+    // Animation pour les cartes de compétences
+    gsap.utils.toArray('.skill-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom-=100",
+                toggleActions: "play none none reverse"
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            delay: i * 0.1
+        });
+    });
+
+    // Animation pour les projets
+    gsap.utils.toArray('.project-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top bottom-=100",
+                toggleActions: "play none none reverse"
+            },
+            x: i % 2 === 0 ? -100 : 100,
+            opacity: 0,
+            duration: 1
+        });
+    });
+
+    // Thème sombre/clair
+    const themeController = document.querySelector('.theme-controller');
+    themeController.addEventListener('change', function() {
+        const html = document.querySelector('html');
+        if (this.checked) {
+            html.setAttribute('data-theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+        }
+    });
+
+    // Utilisation de Lodash pour le menu mobile
+    const mobileMenuToggle = _.debounce(() => {
+        const mobileMenu = document.querySelector('.dropdown-content');
+        mobileMenu.classList.toggle('hidden');
+    }, 200);
+
+    document.querySelector('.dropdown label').addEventListener('click', mobileMenuToggle);
+</script>
+
+</body>
+</html>
