@@ -251,9 +251,19 @@
 
     <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <!-- Left Column - Introduction -->
-            <div class="lg:w-1/2 space-y-8">
-                <div class="space-y-4">
+            <!-- Left Column - Photo -->
+            <div class="lg:w-1/3 flex items-center justify-center">
+                <div class="relative w-64 h-64 animate__animated animate__fadeIn">
+                    <div class="absolute inset-0 bg-primary/20 rounded-full blur-md"></div>
+                    <div class="relative w-60 h-60 rounded-full overflow-hidden border-4 border-primary shadow-xl hover:scale-105 transition-transform duration-300">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQFKkxI0D0LtgA/profile-displayphoto-shrink_800_800/B4EZXo_yaIHgAc-/0/1743370792130?e=1752710400&v=beta&t=fSuM3j8S42N1yGPx5IzkuXh7qANc8MUufQg-nZbqCeU" alt="Cedric Tiako" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Introduction -->
+            <div class="lg:w-2/3 space-y-8">
+                <div class="space-y-6">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate__animated animate__fadeInUp">
                         <span class="gradient-text">TIAKO TCHOUAMENI</span>
                         <span class="block gradient-text">CEDRIC AIME</span>
@@ -261,8 +271,28 @@
                     </h1>
                     
                     <p class="text-lg text-base-content/80 leading-relaxed animate__animated animate__fadeInUp animate__delay-1s">
-                        Développeur Full Stack & Administrateur Système avec près de 4 ans d’expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
+                        Développeur Full Stack & Administrateur Système avec près de 6 ans d'expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
                     </p>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="stat bg-base-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="stat-title text-base-content/60">Expérience</div>
+                            <div class="stat-value text-primary text-2xl">6+ ans</div>
+                        </div>
+                        <div class="stat bg-base-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="stat-title text-base-content/60">Projets</div>
+                            <div class="stat-value text-primary text-2xl">50+</div>
+                        </div>
+                        <div class="stat bg-base-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="stat-title text-base-content/60">Technologies</div>
+                            <div class="stat-value text-primary text-2xl">15+</div>
+                        </div>
+                        <div class="stat bg-base-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow">
+                            <div class="stat-title text-base-content/60">Certifications</div>
+                            <div class="stat-value text-primary text-2xl">5+</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="flex flex-wrap gap-4 animate__animated animate__fadeInUp animate__delay-2s">
@@ -394,7 +424,7 @@
             <div class="card-body">
                 <h3 class="card-title text-2xl mb-4">Objectif Professionnel</h3>
                 <p class="text-lg leading-relaxed">
-                    Développeur Full Stack & Administrateur Système avec près de 4 ans d'expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
+                    Développeur Full Stack & Administrateur Système avec près de 6 ans d'expérience en conception et optimisation de solutions digitales. Spécialisé en développement web/mobile, administration serveurs et gestion de bases de données, je mets mon expertise au service de la performance et de la sécurité des infrastructures IT.
                 </p>
                 <div class="mt-6">
                     <h4 class="text-xl font-semibold mb-3">Langues</h4>
@@ -498,8 +528,10 @@
 
             <!-- Experience Cards -->
             <div class="grid gap-8">
-                                <!-- Classgap Experience -->
-                                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+
+
+                <!-- Classgap Experience -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
                     <div class="card-body">
                         <div class="flex flex-col md:flex-row justify-between items-start mb-4">
                             <div class="space-y-2">
@@ -1129,6 +1161,73 @@
                         </div>
                     </div>
                 </div>
+                <!-- Développeur Freelance -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">Développeur Freelance</h3>
+                                <p class="text-base-content/70">Divers clients locaux – Douala, Cameroun</p>
+                            </div>
+                            <div class="badge badge-primary">2019 - 2021</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-primary mt-1"></i>
+                                        <span>Développement d'applications sur mesure adaptées au marché local.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-primary mt-1"></i>
+                                        <span>Optimisation des plateformes pour améliorer l'expérience utilisateur.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-primary mt-1"></i>
+                                        <span>Contribution à l'open source d'une application de Gestion d'Eglise (Evènement, Messe, Quête et etc.)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MOZALE SARL -->
+                <div class="card bg-base-100 shadow-xl experience-card group" data-aos="fade-up">
+                    <div class="card-body">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-4">
+                            <div class="space-y-2">
+                                <h3 class="card-title text-2xl mb-2 group-hover:text-primary transition-colors">Développeur Web & E-commerce</h3>
+                                <p class="text-base-content/70">MOZALE SARL – Douala, Cameroun</p>
+                            </div>
+                            <div class="badge badge-primary">2018 - 2019</div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="animate-slide-in">
+                                <h4 class="font-semibold text-lg mb-3 flex items-center gap-2">
+                                    <i class="fas fa-info-circle text-primary"></i>
+                                    Description du poste
+                                </h4>
+                                <p class="mb-4">Développement du site e-commerce TheCam, intégrant :</p>
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-primary mt-1"></i>
+                                        <span>Réalité Augmentée (RA) pour l'essai virtuel des produits.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fas fa-check-circle text-primary mt-1"></i>
+                                        <span>Système de fidélisation client et moteur de recherche avancé.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -1172,93 +1271,235 @@
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Projets</h2>
         
+        <!-- Filtres de catégories -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button class="btn btn-primary" onclick="filterProjects('all')">Tous</button>
+            <button class="btn btn-outline" onclick="filterProjects('web')">Web</button>
+            <button class="btn btn-outline" onclick="filterProjects('mobile')">Mobile</button>
+            <button class="btn btn-outline" onclick="filterProjects('other')">Autres</button>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- ConnectMySQLDB -->
-            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <!-- ENEO Cameroun -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
                 <div class="card-body">
                     <div class="flex justify-between items-start">
                         <h3 class="card-title text-xl">
-                            <i class="fas fa-database text-primary mr-2"></i>
-                            ConnectMySQLDB
+                            <i class="fas fa-bolt text-primary mr-2"></i>
+                            ENEO Cameroun
                         </h3>
-                        <div class="badge badge-secondary">PHP</div>
+                        <div class="badge badge-secondary">Web App</div>
                     </div>
                     
                     <p class="text-sm text-base-content/70 mt-2">
-                        Associé à Centre de Formation Professionnel Speedy Print
-                    </p>
-
-                    <p class="text-base-content/80 line-clamp-3">
-                        Classe PHP pour gérer les interactions avec une base de données MySQL en utilisant PDO.
+                        Application de gestion de services électriques
                     </p>
 
                     <div class="card-actions justify-end mt-4">
-                        <button class="btn btn-primary btn-sm" onclick="mysql_modal.showModal()">
-                            Voir plus
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
+                        <a href="https://my.eneocameroon.cm/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Douceurs de Chacha -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-cookie text-primary mr-2"></i>
+                            Douceurs de Chacha
+                        </h3>
+                        <div class="badge badge-secondary">E-commerce</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Boutique en ligne de confiseries artisanales
+                    </p>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://douceurs-de-chacha.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Gadget -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-microchip text-primary mr-2"></i>
+                            Tech Gadget
+                        </h3>
+                        <div class="badge badge-secondary">Vitrine</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Démo de site vitrine pour produits tech
+                    </p>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://tech-gadget.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vidressing -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-tshirt text-primary mr-2"></i>
+                            Vidressing
+                        </h3>
+                        <div class="badge badge-secondary">E-commerce</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Plateforme de vente de vêtements d'occasion
+                    </p>
+
+                    <div class="card-actions justify-end mt-4 gap-2">
+                        <a href="https://vidressing.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Site
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://vidresing.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                            Démo
+                            <i class="fas fa-play"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Bigoodee -->
-            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-store text-primary mr-2"></i>
+                            Bigoodee
+                        </h3>
+                        <div class="badge badge-secondary">E-commerce</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Site e-commerce d'objets artisanaux et responsables
+                    </p>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://bigoodee.fr" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SSI Training -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-graduation-cap text-primary mr-2"></i>
+                            SSI Training
+                        </h3>
+                        <div class="badge badge-secondary">E-learning</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Plateforme de formation IT
+                    </p>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://ssitraining.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DepomPay -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="mobile">
                 <div class="card-body">
                     <div class="flex justify-between items-start">
                         <h3 class="card-title text-xl">
                             <i class="fas fa-mobile-alt text-primary mr-2"></i>
-                            Bigoodee
+                            PomPay
                         </h3>
-                        <div class="badge badge-secondary">Mobile</div>
+                        <div class="badge badge-accent">Mobile</div>
                     </div>
+                    
                     <p class="text-base-content/80 line-clamp-3">
-                        Application mobile e-commerce dédiée aux services de coiffure. Permet aux utilisateurs de découvrir, réserver et payer des services de coiffure directement depuis leur smartphone.
+                        Application de transfert d'argent
                     </p>
-                    <div class="flex items-center gap-2 my-2">
-                        <div class="rating rating-sm">
-                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
-                            <input type="radio" name="rating-bigoodee" class="mask mask-star-2 bg-orange-400" checked />
-                        </div>
-                        <span class="text-sm">4.5/5</span>
-                    </div>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary btn-sm" onclick="bigoodee_modal.showModal()">
-                            Voir plus
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://web.facebook.com/PomPayCameroun" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Facebook
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <span class="badge badge-warning">Hors ligne</span>
                     </div>
                 </div>
             </div>
 
-            <!-- CMR+ -->
-            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+            <!-- Customer Market Rewards -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="other">
                 <div class="card-body">
                     <div class="flex justify-between items-start">
                         <h3 class="card-title text-xl">
-                            <i class="fas fa-trophy text-primary mr-2"></i>
-                            CMR+
+                            <i class="fas fa-gift text-primary mr-2"></i>
+                            Customer Market Rewards
                         </h3>
-                        <div class="badge badge-secondary">Mobile</div>
+                        <div class="badge badge-info">Programme</div>
                     </div>
+                    
                     <p class="text-base-content/80 line-clamp-3">
-                        Application de fidélisation client permettant aux consommateurs de rentabiliser leurs achats.
+                        Programme de fidélité et récompense client
                     </p>
+
                     <div class="card-actions justify-end mt-4">
-                        <button class="btn btn-primary btn-sm" onclick="cmr_modal.showModal()">
-                            Voir plus
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
+                        <a href="https://web.facebook.com/customermarketrewards" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Facebook
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- Modals -->
+            <!-- TheCam -->
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 project-card" data-category="web">
+                <div class="card-body">
+                    <div class="flex justify-between items-start">
+                        <h3 class="card-title text-xl">
+                            <i class="fas fa-camera text-primary mr-2"></i>
+                            TheCam
+                        </h3>
+                        <div class="badge badge-secondary">E-commerce</div>
+                    </div>
+                    
+                    <p class="text-base-content/80 line-clamp-3">
+                        Site e-commerce de produits de beauté et de soins
+                    </p>
+
+                    <div class="card-actions justify-end mt-4">
+                        <a href="https://thecam.cm" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            Visiter
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>  
+            </div>
 <!-- ConnectMySQLDB Modal -->
 <dialog id="mysql_modal" class="modal modal-bottom sm:modal-middle">
     <form method="dialog" class="modal-box">
@@ -1456,6 +1697,7 @@
     </form>
 </dialog>
 
+</section>
 <!-- Contact Section -->
 <section id="contact" class="py-16 bg-base-200">
     <div class="container mx-auto px-6 text-center">
@@ -1678,7 +1920,37 @@
     }
 
     // Initialiser les animations au chargement
-    document.addEventListener('DOMContentLoaded', animateOnScroll);
+    document.addEventListener('DOMContentLoaded', () => {
+        animateOnScroll();
+        // Initialize projects to show all
+        filterProjects('all');
+        
+        // Add active class to filter buttons
+        const filterButtons = document.querySelectorAll('[onclick^="filterProjects"]');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('btn-primary'));
+                this.classList.add('btn-primary');
+            });
+        });
+    });
+
+    // Fonction pour filtrer les projets
+    function filterProjects(category) {
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            if (category === 'all' || card.dataset.category === category) {
+                card.style.display = '';
+                card.classList.add('animate__animated', 'animate__fadeIn');
+                setTimeout(() => {
+                    card.classList.remove('animate__animated', 'animate__fadeIn');
+                }, 1000);
+            } else {
+                card.style.display = 'none';
+                card.classList.remove('animate__animated', 'animate__fadeIn');
+            }
+        });
+    }
 </script>
 </body>
 </html>
